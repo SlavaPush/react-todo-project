@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { v4 as uuidv4 } from 'uuid';
+
 import AppHeader from '../app-header';
 import TodoList from '../todo-list';
 import SearchPanel from '../search-panel';
@@ -10,18 +12,7 @@ import './app.css';
 
 export default class App extends Component {
 
-  maxId = 100;
 
-  createTodoItem = (label) => {
-
-    return {
-      label,
-      important: false,
-      done: false,
-      id: this.maxId++
-    };
-
-  };
 
   state = {
     todoData: [
@@ -33,6 +24,17 @@ export default class App extends Component {
     filter: 'all'
   };
 
+  createTodoItem(label) {
+
+    return {
+      label,
+      important: false,
+      done: false,
+      id: uuidv4()
+    };
+
+
+  };
 
   deleteItem = (id) => {
 
