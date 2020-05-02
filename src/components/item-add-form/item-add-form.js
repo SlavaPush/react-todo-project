@@ -28,7 +28,7 @@ export default class ItemAddForm extends Component {
       onSubmit={ this.onSubmit } >
         <input type="text" className="form-control"
         onChange={ this.onLabelChange }
-        placeholder="What need to be done" 
+        placeholder="What needs to be done" 
         value={ this.state.label } />
         <button
         className="btn btn-outline-secondary" >
